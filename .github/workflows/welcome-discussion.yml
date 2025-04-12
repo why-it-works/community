@@ -1,0 +1,19 @@
+name: Welcome New Discussion Starters
+
+on:
+  discussion:
+    types: [created]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          discussion-message: |
+            👋 Welcome to the community!
+
+            Thanks for starting a discussion.  
+            If you’re new here, feel free to [introduce yourself](https://github.com/orgs/why-it-works/discussions/1) and connect with others!
+
